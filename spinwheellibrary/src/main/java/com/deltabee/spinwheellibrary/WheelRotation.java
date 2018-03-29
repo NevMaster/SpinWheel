@@ -29,6 +29,7 @@ class WheelRotation extends CountDownTimer {
      * @param countDownInterval The interval along the way to receive
      *                          {@link #onTick(long)} callbacks.
      */
+
     public WheelRotation(long millisInFuture, long countDownInterval) {
         super(millisInFuture, countDownInterval);
         thresholdSlow = (long) (millisInFuture * SLOW_FACTOR);

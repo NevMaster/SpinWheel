@@ -47,10 +47,6 @@ public class SpinningWheelView extends View implements WheelRotation.RotationLis
 
     private static final int ARROW_SIZE = 50;
 
-    // endregion
-
-    // region attr
-
     @ColorInt
     private int wheelStrokeColor;
 
@@ -564,8 +560,7 @@ public class SpinningWheelView extends View implements WheelRotation.RotationLis
         float angle = getAnglePerItem() / 2;
 
         for (int i = 0; i < getItemSize(); i++) {
-            CharSequence item = TextUtils
-                    .ellipsize(items.get(i).toString(), textPaint, textWidth, TextUtils.TruncateAt.END);
+            CharSequence item = TextUtils.ellipsize(items.get(i).toString(), textPaint, textWidth, TextUtils.TruncateAt.END);
             canvas.save();
             canvas.rotate(angle + 180, cx, cy); // +180 for start from right
             canvas.drawText(item.toString(), x, y, this.textPaint);
@@ -583,7 +578,6 @@ public class SpinningWheelView extends View implements WheelRotation.RotationLis
 
         // Handle triangle not following the rotation
         canvas.rotate(-angle, cx, cy);
-
         drawTriangle(canvas, trianglePaint, cx, cy - radius, wheelArrowWidth, wheelArrowHeight);
     }
 
